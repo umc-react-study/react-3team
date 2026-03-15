@@ -1,13 +1,12 @@
 import './App.css'
-import FormPage from './pages/FormPage'
+import CompositionFormPage from './pages/CompositionFormPage';
 
 function App() {
-
   return (
     <>
-      <FormPage />
+      <CompositionFormPage />
     </>
   )
 }
 
-export default App
+export default App;

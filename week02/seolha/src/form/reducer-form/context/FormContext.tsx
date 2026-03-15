@@ -1,45 +1,39 @@
-import useForm from "../hooks/useForm";
+import { createContext, useContext, useReducer } from "react";
+import formReducer from "../reducer/formReducer";
 
-export default function HookForm() {
-  const {
-    name,
-    email,
-    handleSubmit,
-    handleChangeName,
-    handleChangeEmail
-  } = useForm();
+type FormContextType = {
+  state: {
+    name: string;
+    email: string;
+  };
+  dispatch: React.Dispatch<any>;
+};
+
+export const FormContext = createContext<FormContextType | null>(null);
+
+export function useFormContext() {
+  const context = useContext(FormContext);
+
+  if (!context) {
+    throw new Error("FormContextProvider 안에서 사용해야 합니다.");
+  }
+
+  return context;
+}
+
+export default function FormContextProvider({
+  children
+}: {
+  children: React.ReactNode;
+}) {
+  const [state, dispatch] = useReducer(formReducer, {
+    name: "",
+    email: ""
+  });
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col items-center justify-center gap-6 w-full max-w-xl p-6 border rounded-4xl bg-white shadow-md"
-    >
-      <h1 className="text-2xl font-bold text-gray-800">
-        Hook Form Example
-      </h1>
-
-      <input
-        type="text"
-        placeholder="이름을 입력하세요."
-        value={name}
-        onChange={handleChangeName}
-        className="border p-2 rounded-3xl w-full h-14"
-      />
-
-      <input
-        type="email"
-        placeholder="이메일을 입력하세요."
-        value={email}
-        onChange={handleChangeEmail}
-        className="border p-2 rounded-3xl w-full h-14"
-      />
-
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded-3xl h-14 w-full"
-      >
-        Submit
-      </button>
-    </form>
+    <FormContext.Provider value={{ state, dispatch }}>
+      {children}
+    </FormContext.Provider>
   );
 }

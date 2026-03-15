@@ -12,7 +12,7 @@ export default function HookForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center justify-center gap-6 w-full max-w-xl p-6 border rounded-4xl bg-white shadow-md"
+      className="flex flex-col items-center justify-center gap-6 w-100 max-w-xl p-6 border rounded-4xl bg-white shadow-md"
     >
       <h1 className="text-2xl font-bold text-gray-800">
         Hook Form Example
