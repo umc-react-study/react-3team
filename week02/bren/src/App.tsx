@@ -1,11 +1,9 @@
-import "./App.css";
+import MultiStepForm from "./components/MultiStepForm/MultiStepForm";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <h1>Hello React</h1>
-    </>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <MultiStepForm />
+    </div>
   );
 }
-
-export default App;
