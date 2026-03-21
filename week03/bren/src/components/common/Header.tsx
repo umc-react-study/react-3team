@@ -1,10 +1,14 @@
 // 헤더 (네비게이션)
-import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header style={{ backgroundColor: "#333", color: "#fff", padding: "10px 20px" }}>
-      <h1>My App</h1>
+    <header>
+      <nav>
+        <NavLink to="/redux">Redux</NavLink>
+        <NavLink to="/context">Context</NavLink>
+        <NavLink to="/zustand">Zustand</NavLink>
+      </nav>
     </header>
   );
 }
