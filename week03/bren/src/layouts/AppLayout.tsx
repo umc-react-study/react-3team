@@ -3,9 +3,9 @@ import Header from "../components/common/Header";
 
 export default function AppLayout() {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-100">
       <Header />
-      <main>
+      <main className="mx-auto max-w-6xl px-4 py-8">
         <Outlet />
       </main>
     </div>
