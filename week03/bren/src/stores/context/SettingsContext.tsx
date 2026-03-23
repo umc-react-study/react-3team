@@ -72,7 +72,7 @@ export function useSettings() {
   const context = useContext(SettingsContext);
 
   if (!context) {
-    throw new Error("useSettings는 SettingsProvider 내부에서만 사용 가능해.");
+    throw new Error("useSettings는 SettingsProvider 내부에서만 사용 가능합니다.");
   }
 
   return context;
