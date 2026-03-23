@@ -5,7 +5,4 @@ export type SettingsState = {
   theme: ThemeMode;
   language: Language;
   notificationsEnabled: boolean;
-  compactMode: boolean;
-  autoSync: boolean;
-  lastSyncedAt: string;
 };
