@@ -1,0 +1,46 @@
+.app {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.app-header p {
+  margin: 0 0 1.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.duck-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.duck-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+
+.duck-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.duck-species {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.error {
+  color: #b91c1c;
+}
