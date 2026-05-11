@@ -1,28 +1,28 @@
-import { Component, type ErrorInfo, type ReactNode } from "react";
+import { Component, type ErrorInfo, type ReactNode } from "react"
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 type State = {
-  hasError: boolean;
-  error?: Error;
-};
+  hasError: boolean
+  error?: Error
+}
 
 export class AppErrorBoundary extends Component<Props, State> {
-  state: State = { hasError: false };
+  state: State = { hasError: false }
 
   static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
+    return { hasError: true, error }
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error("[AppErrorBoundary]", error, info);
+    console.error("[AppErrorBoundary]", error, info)
   }
 
   handleReset = () => {
-    this.setState({ hasError: false, error: undefined });
-  };
+    this.setState({ hasError: false, error: undefined })
+  }
 
   render() {
     if (this.state.hasError) {
@@ -35,9 +35,9 @@ export class AppErrorBoundary extends Component<Props, State> {
             다시 렌더링
           </button>
         </section>
-      );
+      )
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }
